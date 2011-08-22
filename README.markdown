@@ -11,7 +11,7 @@ PollJS is a lightweight wrapper for the JavaScript Interval and Timer methods.
 PollJS is simple to use.  Every time you want to start an interval or timer, simply call the `Poll.start` method, and give it the appropriate configuration values:
 
     Poll.start({
-        "update_users",
+        name: "update_users",
         interval: 1500,
         action: function(){
             alert("Updated!");
@@ -25,7 +25,7 @@ To stop the interval, simply pass your defined name to the `Poll.stop` method:
 You can also stop an interval from within it's action by returning false:
 
     Poll.start({
-        "update_users",
+        name: "update_users",
         interval: 1500,
         action: function(){
             alert("Updated!");
