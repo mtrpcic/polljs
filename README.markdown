@@ -57,7 +57,7 @@ You can use all of the PollJS configuration options at once:
         start: 5000, // Start this poller 5 seconds from now
         interval: 500, // Re-run the poller every 0.5 seconds
         increment: 200, // Increase the poll interval by 200ms every time it runs
-        max_attempts: 5,
+        attempts: 5,
         fallback: function(){
             alert("Fallback");
         }
