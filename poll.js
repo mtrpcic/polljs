@@ -1,8 +1,11 @@
 var Poll = {
-    "version": "0.2.1",
+    "version": "0.3",
     "start": function(config){
         action = config.action;
-        config.action = function(){ Poll.util.attempts(config.name, action)};
+        config.internal_action = config.action;
+        config.action = function(){
+            Poll.util.attempts(config.name, config.internal_action);
+        };
         if(config.start){
             if(config.interval){
                 if(config.increment){
