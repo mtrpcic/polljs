@@ -15,8 +15,8 @@ var Poll = {
                 } else {
                     Poll.timers[config.name] = {"type": "timeout", "config": config, "attempts": 0, "value": setTimeout(function(){
                         config.action();
-                        Poll.timers[config.name]["value"] = setInterval(config.action, config.interval);
-                        Poll.timers[config.name]["type"] = "interval";
+                        Poll.timers[config.name].value = setInterval(config.action, config.interval);
+                        Poll.timers[config.name].type = "interval";
                     }, config.start)};
                 }
             } else {
@@ -61,13 +61,28 @@ var Poll = {
             fn();
         }
     },
-    "stop": function(name){
-        var instance = Poll.timers[name];
-        if(instance.type == "interval"){
-            clearInterval(instance.value);
-        } else {
-            clearTimeout(instance.value);
-        }
+    "exists": function(name){
+		if(Poll.timers[name] !== undefined)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
     },
-    "timers":{}
+	"stop": function(name){
+		if(Poll.exists(name))
+		{
+			var instance = Poll.timers[name];
+			if(instance.type == "interval"){
+				clearInterval(instance.value);
+			} else {
+				clearTimeout(instance.value);
+			}
+		} else {
+			throw "PollJS: The interval you are trying to stop does not exist.";
+		}
+	},
+	"timers":{}
 };
