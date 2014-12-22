@@ -14,7 +14,7 @@
     "use strict";
 
     var Poll = {
-        "version": "0.3.1",
+        "version": "@@VERSION",
         "start": function(config){
             config.internalAction = config.action;
             config.action = function(){

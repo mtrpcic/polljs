@@ -1,0 +1,24 @@
+{
+  "name": "polljs",
+  "version": "0.3.1",
+  "homepage": "https://github.com/mtrpcic/polljs",
+  "authors": [
+    "Mike Trpcic"
+  ],
+  "description": "Javascript Timers and Intervals made easy.",
+  "main": "poll.js",
+  "keywords": [
+    "timers",
+    "intervals",
+    "setInterval",
+    "clearInterval"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

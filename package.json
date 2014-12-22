@@ -1,0 +1,32 @@
+{
+  "name": "polljs",
+  "version": "0.3.1",
+  "description": "Javascript Timers and Intervals made easy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mtrpcic/polljs.git"
+  },
+  "keywords": [
+    "timers",
+    "intervals",
+    "setInterval",
+    "clearInterval"
+  ],
+  "author": "Mike Trpcic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mtrpcic/polljs/issues"
+  },
+  "homepage": "https://github.com/mtrpcic/polljs",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-eslint": "^0.2.0",
+    "gulp-replace": "^0.5.0",
+    "gulp-uglify": "^1.0.2",
+    "run-sequence": "^1.0.2"
+  }
+}
