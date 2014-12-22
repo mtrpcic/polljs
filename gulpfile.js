@@ -12,20 +12,13 @@ var path = require("path"),
 var src = "./src",
     dest = __dirname,
     paths = {
-        src: {
-            scripts: [
-                path.join(src, "*.js")
-            ]
-        },
-        dest: {
-            scripts: [
-                path.join(dest, "*.js")
-            ]
-        }
+        scripts: [
+            path.join(src, "*.js")
+        ]
     };
 
 gulp.task("lint", function() {
-    var scripts = paths.src.scripts.concat(["gulpfile.js"]);
+    var scripts = paths.scripts.concat(["gulpfile.js"]);
 
     return gulp.src(scripts)
         .pipe(eslint())
@@ -42,7 +35,7 @@ gulp.task("compress", function() {
 });
 
 gulp.task("bundle", function() {
-    return gulp.src(paths.src.scripts)
+    return gulp.src(paths.scripts)
         .pipe(replace("@@VERSION", pkg.version))
         .pipe(gulp.dest(dest));
 });
