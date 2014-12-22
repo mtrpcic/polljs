@@ -33,9 +33,7 @@ gulp.task("lint", function() {
 });
 
 gulp.task("compress", function() {
-    var scripts = paths.dest.scripts.concat(["!gulpfile.js", "!index.js", "!*.min.js"]);
-
-    return gulp.src(scripts)
+    return gulp.src("poll.js")
         .pipe(uglify())
         .pipe(rename({
             extname: ".min.js"
